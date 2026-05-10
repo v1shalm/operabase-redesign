@@ -1,0 +1,227 @@
+.scrim {
+  position: fixed;
+  inset: 0;
+  background: rgba(31, 31, 31, 0);
+  pointer-events: none;
+  transition: background 240ms ease;
+  z-index: 80;
+}
+.scrim[data-open="true"] {
+  background: rgba(31, 31, 31, 0.32);
+  pointer-events: auto;
+}
+
+.panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(420px, 92vw);
+  background: var(--ob-bg);
+  border-left: 1px solid var(--ob-border);
+  z-index: 90;
+  transform: translateX(100%);
+  transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
+  display: flex;
+  flex-direction: column;
+  box-shadow: -16px 0 32px rgba(31, 31, 31, 0.06);
+}
+.panel[data-open="true"] {
+  transform: translateX(0);
+}
+
+.head {
+  position: relative;
+  padding: 32px 28px 22px;
+  border-bottom: 1px solid var(--ob-border);
+  background: var(--ob-surface);
+}
+.close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid var(--ob-border);
+  background: var(--ob-bg);
+  color: var(--ob-text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    border-color 150ms ease,
+    color 150ms ease;
+}
+.close:hover {
+  border-color: var(--ob-text);
+  color: var(--ob-text-strong);
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--ob-accent-soft);
+  border: 1px solid color-mix(in oklab, var(--ob-accent) 20%, transparent);
+  font-family: var(--font-serif);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--ob-accent-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.voice {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ob-text-muted);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.name {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--ob-text-strong);
+  margin: 0 0 8px;
+  line-height: 1.1;
+  letter-spacing: -0.005em;
+}
+
+.context {
+  font-size: 12px;
+  color: var(--ob-text-muted);
+}
+.context em {
+  font-style: italic;
+  color: var(--ob-text);
+}
+
+.body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 22px 28px;
+}
+
+.section {
+  margin-bottom: 18px;
+}
+.section:last-child {
+  margin-bottom: 0;
+}
+
+.label {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ob-text-muted);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.bio {
+  margin: 0;
+  font-size: 13px;
+  color: var(--ob-text);
+  line-height: 1.6;
+  max-width: 60ch;
+}
+
+.role {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  color: var(--ob-text-strong);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.debutPill {
+  font-family: var(--font-sans);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--ob-success-bg);
+  color: var(--ob-success);
+  padding: 2px 8px;
+  border-radius: 2px;
+  font-weight: 700;
+}
+
+.topRoles {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.topRoles li {
+  font-size: 12px;
+  color: var(--ob-text);
+  background: var(--ob-surface-soft);
+  border: 1px solid var(--ob-border);
+  padding: 4px 10px;
+  border-radius: 2px;
+}
+
+.upcomingCount {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.upcomingCount strong {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  color: var(--ob-text-strong);
+  font-weight: 700;
+}
+.upcomingCount span {
+  font-size: 12px;
+  color: var(--ob-text-muted);
+}
+
+.agency {
+  font-size: 13px;
+  color: var(--ob-text);
+}
+
+.foot {
+  border-top: 1px solid var(--ob-border);
+  padding: 18px 28px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--ob-bg);
+}
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: var(--ob-link);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 11px 16px;
+  border-radius: 2px;
+  transition: background 150ms ease;
+}
+.cta:hover {
+  background: var(--ob-link-hover);
+  text-decoration: none;
+}
+.ctaSec {
+  text-align: center;
+  font-size: 12px;
+  color: var(--ob-link);
+  padding: 6px;
+}
+.ctaSec:hover {
+  text-decoration: underline;
+}

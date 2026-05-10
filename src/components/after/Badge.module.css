@@ -1,0 +1,41 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 2px;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+.badge[data-tone="accent"] {
+  background: var(--ob-accent-soft);
+  color: var(--ob-accent-strong);
+  border-color: color-mix(in oklab, var(--ob-accent) 20%, transparent);
+}
+.badge[data-tone="blue"] {
+  background: var(--ob-link-bg);
+  color: var(--ob-link);
+  border-color: var(--ob-link-soft);
+}
+.badge[data-tone="amber"] {
+  background: #fff7e6;
+  color: #8a5a00;
+  border-color: #f3c886;
+}
+.badge[data-tone="danger"] {
+  background: #fbeaea;
+  color: var(--ob-danger);
+  border-color: #f1c4c4;
+}
+.badge[data-tone="neutral"] {
+  background: var(--ob-surface-soft);
+  color: var(--ob-text);
+  border-color: var(--ob-border);
+}
